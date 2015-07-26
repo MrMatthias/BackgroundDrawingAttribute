@@ -13,6 +13,7 @@
 		39F9A32B1B63BC6600304FA3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39F9A32A1B63BC6600304FA3 /* Images.xcassets */; };
 		39F9A32E1B63BC6600304FA3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39F9A32C1B63BC6600304FA3 /* LaunchScreen.xib */; };
 		39F9A33A1B63BC6700304FA3 /* BackgroundDrawingAttributeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F9A3391B63BC6700304FA3 /* BackgroundDrawingAttributeTests.swift */; };
+		39F9A3441B63BC8B00304FA3 /* BackgroundAttributeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F9A3431B63BC8B00304FA3 /* BackgroundAttributeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		39F9A3331B63BC6700304FA3 /* BackgroundDrawingAttributeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BackgroundDrawingAttributeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F9A3381B63BC6700304FA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39F9A3391B63BC6700304FA3 /* BackgroundDrawingAttributeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundDrawingAttributeTests.swift; sourceTree = "<group>"; };
+		39F9A3431B63BC8B00304FA3 /* BackgroundAttributeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundAttributeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		39F9A3201B63BC6600304FA3 /* BackgroundDrawingAttribute */ = {
 			isa = PBXGroup;
 			children = (
+				39F9A3431B63BC8B00304FA3 /* BackgroundAttributeView.swift */,
 				39F9A3231B63BC6600304FA3 /* AppDelegate.swift */,
 				39F9A3251B63BC6600304FA3 /* ViewController.swift */,
 				39F9A3271B63BC6600304FA3 /* Main.storyboard */,
@@ -214,6 +217,7 @@
 			files = (
 				39F9A3261B63BC6600304FA3 /* ViewController.swift in Sources */,
 				39F9A3241B63BC6600304FA3 /* AppDelegate.swift in Sources */,
+				39F9A3441B63BC8B00304FA3 /* BackgroundAttributeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

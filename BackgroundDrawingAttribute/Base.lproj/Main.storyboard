@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
-    <device id="ipad12_9" orientation="landscape">
+    <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,20 +19,20 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ufj-wL-imX" customClass="BackgroundAttributeView" customModule="BackgroundDrawingAttribute" customModuleProvider="target">
-                                <rect key="frame" x="20" y="28" width="1326" height="968"/>
+                                <rect key="frame" x="20" y="28" width="984" height="712"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Ufj-wL-imX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="5pt-j3-YfI"/>
-                            <constraint firstItem="Ufj-wL-imX" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="LRN-CH-Kej"/>
-                            <constraint firstItem="Ufj-wL-imX" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="jvC-hd-mXJ"/>
-                            <constraint firstItem="Ufj-wL-imX" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="rCH-VM-j8O"/>
+                            <constraint firstItem="Ufj-wL-imX" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="5oG-wx-Isf"/>
+                            <constraint firstItem="Ufj-wL-imX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Rlt-aS-Jfl"/>
+                            <constraint firstItem="Ufj-wL-imX" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Tfy-gk-KIz"/>
+                            <constraint firstItem="Ufj-wL-imX" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="l2K-ua-mPd"/>
                         </constraints>
                     </view>
                 </viewController>

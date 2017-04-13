@@ -6,12 +6,19 @@ class BackgroundAttributeView: UIView {
     
     var text:NSAttributedString = {
         
-        if let font = UIFont(name:"Helvetica", size:20) {
+        if let font = UIFont(name:"Helvetica", size:80) {
             var att = [NSFontAttributeName:font]
             
-            var text = NSMutableAttributedString(string: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ullamco ", attributes:att)
-            text.append(NSAttributedString(string: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed  in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum", attributes: ["kBackgroundAttribute":UIColor.cyan, NSFontAttributeName: font]))
-            text.append(NSAttributedString(string: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation", attributes:att))
+//            var text = NSMutableAttributedString(string: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ullamco ", attributes:att)
+//            text.append(NSAttributedString(string: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed  in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum", attributes: ["kBackgroundAttribute":UIColor.cyan, NSFontAttributeName: font]))
+//            text.append(NSAttributedString(string: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation", attributes:att))
+//            return text
+            
+            var text = NSMutableAttributedString(string: " a ", attributes: ["kBackgroundAttribute":UIColor.green, NSFontAttributeName: font])
+            text.append(NSAttributedString(string: " * ", attributes: att))
+            text.append(NSAttributedString(string: " b ", attributes: ["kBackgroundAttribute":UIColor.orange, NSFontAttributeName: font]))
+            text.append(NSAttributedString(string: " * ", attributes: att))
+            text.append(NSAttributedString(string: " c ", attributes: ["kBackgroundAttribute":UIColor.blue, NSFontAttributeName: font]))
             return text
         }
         return NSAttributedString()
@@ -29,7 +36,7 @@ class BackgroundAttributeView: UIView {
         
         _ = CTFrameGetVisibleStringRange(ctFrame)
         
-        if let  ctx = UIGraphicsGetCurrentContext() {
+        if let ctx = UIGraphicsGetCurrentContext() {
             ctx.saveGState()
             ctx.textMatrix = CGAffineTransform.identity
             ctx.translateBy(x: 0, y: bounds.height)
@@ -53,18 +60,18 @@ class BackgroundAttributeView: UIView {
                         let typographicBounds = CTRunGetTypographicBounds(run, CFRangeMake(0, 0), &ascent, &descent, &leading)
                         let xOffset:CGFloat = CTLineGetOffsetForStringIndex(line, stringRange.location, nil)
                         
-                        ctx.textPosition = CGPoint(x: lineOrigin.x, y: lineOrigin.y + descent)
+                        ctx.textPosition = CGPoint(x: lineOrigin.x, y: lineOrigin.y + descent - 10)
                         
                         let currentLineHeight = ascent + descent + leading
                         
                         if currentLineHeight > lineHeight {
                             lineHeight = currentLineHeight
                         }
-                        let runBounds = CGRect(x: lineOrigin.x + xOffset, y: lineOrigin.y, width: CGFloat(typographicBounds), height: ascent + descent)
+                        let runBounds = CGRect(x: lineOrigin.x + xOffset, y: lineOrigin.y - 10, width: CGFloat(typographicBounds), height: ascent + descent)
                         let attributes:NSDictionary = CTRunGetAttributes(run)
                         let maybeColor = attributes.value(forKey: "kBackgroundAttribute") as! UIColor?
                         if let color = maybeColor {
-                            let path = UIBezierPath(roundedRect: runBounds, cornerRadius: 3)
+                            let path = UIBezierPath(roundedRect: runBounds, cornerRadius: 5)
                             color.setFill()
                             path.fill()
                         }
@@ -77,6 +84,7 @@ class BackgroundAttributeView: UIView {
     }
     
     override func layoutSubviews() {
-        self.draw(self.bounds)
+        super.layoutSubviews()
+        self.setNeedsDisplay()
     }
 }

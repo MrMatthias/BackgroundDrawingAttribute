@@ -6,7 +6,9 @@ class BackgroundAttributeView: UIView {
     
     var text:NSAttributedString = {
         
-        if let font = UIFont(name:"Helvetica", size:80) {
+        let fontSize: CGFloat = 80.0
+        
+        if let font = UIFont(name:"Helvetica", size:fontSize) {
             var att = [NSFontAttributeName:font]
             
 //            var text = NSMutableAttributedString(string: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ullamco ", attributes:att)
@@ -14,10 +16,13 @@ class BackgroundAttributeView: UIView {
 //            text.append(NSAttributedString(string: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation", attributes:att))
 //            return text
             
+            let paragraph = NSMutableParagraphStyle()
+            paragraph.alignment = .center
+            
             var text = NSMutableAttributedString(string: " a ", attributes: ["kBackgroundAttribute":UIColor.green, NSFontAttributeName: font])
-            text.append(NSAttributedString(string: " * ", attributes: att))
+            text.append(NSAttributedString(string: " * ", attributes: [NSFontAttributeName: font, NSBaselineOffsetAttributeName: (fontSize * 0.32) * -1]))
             text.append(NSAttributedString(string: " b ", attributes: ["kBackgroundAttribute":UIColor.orange, NSFontAttributeName: font]))
-            text.append(NSAttributedString(string: " * ", attributes: att))
+            text.append(NSAttributedString(string: " * ", attributes: [NSFontAttributeName: font, NSBaselineOffsetAttributeName: (fontSize * 0.32) * -1]))
             text.append(NSAttributedString(string: " c ", attributes: ["kBackgroundAttribute":UIColor.blue, NSFontAttributeName: font]))
             return text
         }
